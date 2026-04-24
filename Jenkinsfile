@@ -20,6 +20,7 @@ pipeline {
                 sh 'docker stop hello-devops || true'
                 sh 'docker rm hello-devops || true'
                 sh 'docker run -d -p 8081:8080 --name hello-devops hello-devops'
+                sh 'echo "Visit this website http://$(curl ifconfig.me):8081 "'
             }
         }
 
